@@ -38,6 +38,7 @@ def transcribe_and_diarize(input_file, base_output_dir):
 
     # Convert and prepare file names
     base_name = os.path.splitext(os.path.basename(input_file))[0]
+    os.makedirs(wav_output_dir, exist_ok=True)
     wav_path = convert_to_wav(input_file, wav_output_dir, base_name + ".wav")
     transcript_path = os.path.join(transcript_output_dir, base_name + "_transcript.csv")
 
