@@ -32,12 +32,17 @@ def process_directory(root_dir, output_dir):
                 try:
                     os.makedirs(transcript_subdir, exist_ok=True)
                     os.makedirs(wav_subdir, exist_ok=True)
-                    # Call transcriber with preserved subfolder paths
-                    ctt.transcribe_and_diarize(input_path, output_dir)
+
+                    # ✅ Correctly pass the output subfolders to the transcriber
+                    ctt.transcribe_and_diarize(
+                        input_file=input_path,
+                        wav_output_dir=wav_subdir,
+                        transcript_output_dir=transcript_subdir
+                    )
                 except Exception as e:
                     print(f"Failed to process {input_path}: {e}")
 
 if __name__ == "__main__":
-    input_dir = "/home/Angus/Desktop/StudyRecordings/Test 1"
-    output_dir = "/home/Angus/Desktop/StudyRecordings"
+    input_dir = r"C:\Users\angus\Desktop\PersonalVSCode\Github\StudyRecordings\Study 1"
+    output_dir = r"C:\Users\angus\Desktop\PersonalVSCode\Github\StudyRecordings"
     process_directory(input_dir, output_dir)

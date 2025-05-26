@@ -29,28 +29,25 @@ def extract_segment(wav_path, start_sec, end_sec):
     return out_path
 
 # --- MAIN FUNCTION ---
-def transcribe_and_diarize(input_file, base_output_dir):
+def transcribe_and_diarize(input_file, wav_output_dir, transcript_output_dir):
     # Prepare output paths
-    wav_output_dir = os.path.join(base_output_dir, "convertedRecordings")
-    transcript_output_dir = os.path.join(base_output_dir, "transcripts")
     os.makedirs(wav_output_dir, exist_ok=True)
     os.makedirs(transcript_output_dir, exist_ok=True)
 
-    # Convert and prepare file names
     base_name = os.path.splitext(os.path.basename(input_file))[0]
-    os.makedirs(wav_output_dir, exist_ok=True)
-    wav_path = convert_to_wav(input_file, wav_output_dir, base_name + ".wav")
-    transcript_path = os.path.join(transcript_output_dir, base_name + "_transcript.csv")
+    wav_file = os.path.join(wav_output_dir, base_name + ".wav")
 
-    # Load Whisper model and transcribe
+    # --- CONVERT TO WAV ---
+    os.system(f"ffmpeg -y -i \"{input_file}\" -ar 16000 -ac 1 \"{wav_file}\"")
+
     model = whisper.load_model("medium")
-    result = model.transcribe(wav_path, language="en")
-    segments = result["segments"]
+    result = model.transcribe(wav_file, language="en")
 
-    # Embed segments
-    encoder = VoiceEncoder()
+    segments = result["segments"]
     embeddings = []
     valid_segments = []
+
+    encoder = VoiceEncoder()
 
     for segment in segments:
         start = segment["start"]
@@ -58,7 +55,8 @@ def transcribe_and_diarize(input_file, base_output_dir):
         if end - start < 0.5:
             continue
 
-        segment_audio_path = extract_segment(wav_path, start, end)
+        segment_audio_path = tempfile.NamedTemporaryFile(suffix=".wav", delete=False).name
+        ffmpeg.input(wav_file, ss=start, to=end).output(segment_audio_path, ar=16000, ac=1).run(quiet=True, overwrite_output=True)
         try:
             wav = preprocess_wav(segment_audio_path)
             embed = encoder.embed_utterance(wav)
@@ -69,41 +67,38 @@ def transcribe_and_diarize(input_file, base_output_dir):
         finally:
             os.remove(segment_audio_path)
 
-    if len(embeddings) < MIN_SPEAKERS:
+    if len(embeddings) < 2:
         print("Not enough segments for speaker estimation.")
         return
 
-    # Estimate speakers
-    print("Estimating number of speakers...")
-    best_n = MIN_SPEAKERS
+    best_n = 2
     best_score = -1
     best_labels = []
 
-    for n_clusters in range(MIN_SPEAKERS, min(MAX_SPEAKERS + 1, len(embeddings))):
+    for n_clusters in range(2, min(6 + 1, len(embeddings))):
         kmeans = KMeans(n_clusters=n_clusters, random_state=0).fit(embeddings)
         labels = kmeans.labels_
         if len(set(labels)) == 1:
             continue
         score = silhouette_score(embeddings, labels)
-        print(f"n_clusters={n_clusters}, silhouette={score:.3f}")
         if score > best_score:
             best_score = score
             best_n = n_clusters
             best_labels = labels
 
-    print(f"Using estimated number of speakers: {best_n}")
-
-    # Save transcript with speaker labels
     rows = []
     for segment, label in zip(valid_segments, best_labels):
+        start = str(timedelta(seconds=int(segment["start"])))
+        end = str(timedelta(seconds=int(segment["end"])))
+        text = segment["text"].strip()
+        speaker = f"Person {label + 1}"
         rows.append({
-            "start_time": str(timedelta(seconds=int(segment["start"]))),
-            "end_time": str(timedelta(seconds=int(segment["end"]))),
-            "speaker": f"Person {label + 1}",
-            "text": segment["text"].strip()
+            "start_time": start,
+            "end_time": end,
+            "speaker": speaker,
+            "text": text
         })
 
     df = pd.DataFrame(rows)
-    df.to_csv(transcript_path, index=False)
-    print(f"Transcript saved to: {transcript_path}")
-    return transcript_path, wav_path
+    transcript_file = os.path.join(transcript_output_dir, base_name + "_transcript.csv")
+    df.to_csv(transcript_file, index=False)
