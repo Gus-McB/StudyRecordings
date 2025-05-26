@@ -1,0 +1,6 @@
+pandas
+resemblyzer
+scikit-learn
+numpy
+whisper
+ffmpeg
