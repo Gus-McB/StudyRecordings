@@ -131,3 +131,10 @@ __pycache__/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Recordings
+convertedRecordings/
+Study 1/
+Pilot 1/
+Test 1/
+transcripts/
