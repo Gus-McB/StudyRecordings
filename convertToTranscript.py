@@ -12,8 +12,9 @@ import tempfile
 # --- CONSTANTS ---
 MIN_SPEAKERS = 2
 MAX_SPEAKERS = 6
+SUPPORTED_AUDIO_EXTENSIONS = {'.amr', '.wma', '.mp3', '.m4a', '.wav'}
 
-# --- CONVERT WMA TO WAV ---
+# --- Convert any audio to WAV (Mono, 16kHz) ---
 def convert_to_wav(input_file, output_dir, output_filename=None):
     if not output_filename:
         output_filename = os.path.splitext(os.path.basename(input_file))[0] + ".wav"
@@ -22,24 +23,23 @@ def convert_to_wav(input_file, output_dir, output_filename=None):
     os.system(f"ffmpeg -y -i \"{input_file}\" -ar 16000 -ac 1 \"{output_path}\"")
     return output_path
 
-# --- EXTRACT AUDIO SEGMENTS FOR EMBEDDING ---
+# --- Extract audio segment for speaker embedding ---
 def extract_segment(wav_path, start_sec, end_sec):
     out_path = tempfile.NamedTemporaryFile(suffix=".wav", delete=False).name
     ffmpeg.input(wav_path, ss=start_sec, to=end_sec).output(out_path, ar=16000, ac=1).run(quiet=True, overwrite_output=True)
     return out_path
 
-# --- MAIN FUNCTION ---
+# --- Transcribe + Diarize ---
 def transcribe_and_diarize(input_file, wav_output_dir, transcript_output_dir):
-    # Prepare output paths
+    # Prepare paths
     os.makedirs(wav_output_dir, exist_ok=True)
     os.makedirs(transcript_output_dir, exist_ok=True)
-
     base_name = os.path.splitext(os.path.basename(input_file))[0]
-    wav_file = os.path.join(wav_output_dir, base_name + ".wav")
 
-    # --- CONVERT TO WAV ---
-    os.system(f"ffmpeg -y -i \"{input_file}\" -ar 16000 -ac 1 \"{wav_file}\"")
+    # Convert input audio to WAV
+    wav_file = convert_to_wav(input_file, wav_output_dir, base_name + ".wav")
 
+    # Transcribe using Whisper
     model = whisper.load_model("medium")
     result = model.transcribe(wav_file, language="en")
 
@@ -55,9 +55,8 @@ def transcribe_and_diarize(input_file, wav_output_dir, transcript_output_dir):
         if end - start < 0.5:
             continue
 
-        segment_audio_path = tempfile.NamedTemporaryFile(suffix=".wav", delete=False).name
-        ffmpeg.input(wav_file, ss=start, to=end).output(segment_audio_path, ar=16000, ac=1).run(quiet=True, overwrite_output=True)
         try:
+            segment_audio_path = extract_segment(wav_file, start, end)
             wav = preprocess_wav(segment_audio_path)
             embed = encoder.embed_utterance(wav)
             embeddings.append(embed)
@@ -65,17 +64,19 @@ def transcribe_and_diarize(input_file, wav_output_dir, transcript_output_dir):
         except Exception as e:
             print(f"Error embedding segment ({start}-{end}): {e}")
         finally:
-            os.remove(segment_audio_path)
+            if os.path.exists(segment_audio_path):
+                os.remove(segment_audio_path)
 
     if len(embeddings) < 2:
         print("Not enough segments for speaker estimation.")
         return
 
-    best_n = 2
+    # Cluster speaker embeddings
+    best_n = MIN_SPEAKERS
     best_score = -1
     best_labels = []
 
-    for n_clusters in range(2, min(6 + 1, len(embeddings))):
+    for n_clusters in range(MIN_SPEAKERS, min(MAX_SPEAKERS + 1, len(embeddings))):
         kmeans = KMeans(n_clusters=n_clusters, random_state=0).fit(embeddings)
         labels = kmeans.labels_
         if len(set(labels)) == 1:
@@ -86,6 +87,7 @@ def transcribe_and_diarize(input_file, wav_output_dir, transcript_output_dir):
             best_n = n_clusters
             best_labels = labels
 
+    # Save diarized transcript
     rows = []
     for segment, label in zip(valid_segments, best_labels):
         start = str(timedelta(seconds=int(segment["start"])))

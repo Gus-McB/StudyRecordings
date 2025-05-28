@@ -1,7 +1,7 @@
 import os
 import convertToTranscript as ctt
 
-SUPPORTED_EXTENSIONS = {'.wma', '.wav', '.mp3', '.m4a'}
+SUPPORTED_EXTENSIONS = {'.wma', '.wav', '.mp3', '.m4a', '.amr'}
 
 def is_audio_file(filename):
     return os.path.splitext(filename)[1].lower() in SUPPORTED_EXTENSIONS
@@ -33,7 +33,6 @@ def process_directory(root_dir, output_dir):
                     os.makedirs(transcript_subdir, exist_ok=True)
                     os.makedirs(wav_subdir, exist_ok=True)
 
-                    # ✅ Correctly pass the output subfolders to the transcriber
                     ctt.transcribe_and_diarize(
                         input_file=input_path,
                         wav_output_dir=wav_subdir,
@@ -43,6 +42,6 @@ def process_directory(root_dir, output_dir):
                     print(f"Failed to process {input_path}: {e}")
 
 if __name__ == "__main__":
-    input_dir = r"C:\Users\angus\Desktop\PersonalVSCode\Github\StudyRecordings\Test 1"
+    input_dir = r"C:\Users\angus\Desktop\PersonalVSCode\Github\StudyRecordings\Pilot 1"
     output_dir = r"C:\Users\angus\Desktop\PersonalVSCode\Github\StudyRecordings"
     process_directory(input_dir, output_dir)
