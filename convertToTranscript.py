@@ -1,20 +1,15 @@
 import os
 import pandas as pd
 from datetime import timedelta
-from resemblyzer import VoiceEncoder, preprocess_wav
-from sklearn.cluster import KMeans
-from sklearn.metrics import silhouette_score
-import numpy as np
-import whisper
-import ffmpeg
-import tempfile
+import assemblyai as aai
+from dotenv import load_dotenv
 
 # --- CONSTANTS ---
-MIN_SPEAKERS = 2
-MAX_SPEAKERS = 3
+load_dotenv()
 SUPPORTED_AUDIO_EXTENSIONS = {'.amr', '.wma', '.mp3', '.m4a', '.wav'}
+ASSEMBLYAI_API_KEY = os.getenv("ASSEMBLYAI_API_KEY")
 
-# --- Convert any audio to WAV (Mono, 16kHz) ---
+# --- Convert to WAV (Mono, 16kHz) ---
 def convert_to_wav(input_file, output_dir, output_filename=None):
     if not output_filename:
         output_filename = os.path.splitext(os.path.basename(input_file))[0] + ".wav"
@@ -23,84 +18,101 @@ def convert_to_wav(input_file, output_dir, output_filename=None):
     os.system(f"ffmpeg -y -i \"{input_file}\" -ar 16000 -ac 1 \"{output_path}\"")
     return output_path
 
-# --- Extract audio segment for speaker embedding ---
-def extract_segment(wav_path, start_sec, end_sec):
-    out_path = tempfile.NamedTemporaryFile(suffix=".wav", delete=False).name
-    ffmpeg.input(wav_path, ss=start_sec, to=end_sec).output(out_path, ar=16000, ac=1).run(quiet=True, overwrite_output=True)
-    return out_path
-
-# --- Transcribe + Diarize ---
+# --- Transcribe + Diarize using AssemblyAI ---
 def transcribe_and_diarize(input_file, wav_output_dir, transcript_output_dir):
-    # Prepare paths
     os.makedirs(wav_output_dir, exist_ok=True)
     os.makedirs(transcript_output_dir, exist_ok=True)
     base_name = os.path.splitext(os.path.basename(input_file))[0]
 
-    # Convert input audio to WAV
+    # Convert to WAV
     wav_file = convert_to_wav(input_file, wav_output_dir, base_name + ".wav")
 
-    # Transcribe using Whisper
-    model = whisper.load_model("medium")
-    result = model.transcribe(wav_file, language="en")
+    # Transcribe with speaker diarization
+    aai.settings.api_key = ASSEMBLYAI_API_KEY
+    transcriber = aai.Transcriber()
+    transcript = transcriber.transcribe(wav_file, config=aai.TranscriptionConfig(speaker_labels=True))
 
-    segments = result["segments"]
-    embeddings = []
-    valid_segments = []
-
-    encoder = VoiceEncoder()
-
-    for segment in segments:
-        start = segment["start"]
-        end = segment["end"]
-        if end - start < 0.5:
-            continue
-
-        try:
-            segment_audio_path = extract_segment(wav_file, start, end)
-            wav = preprocess_wav(segment_audio_path)
-            embed = encoder.embed_utterance(wav)
-            embeddings.append(embed)
-            valid_segments.append(segment)
-        except Exception as e:
-            print(f"Error embedding segment ({start}-{end}): {e}")
-        finally:
-            if os.path.exists(segment_audio_path):
-                os.remove(segment_audio_path)
-
-    if len(embeddings) < 2:
-        print("Not enough segments for speaker estimation.")
+    if transcript.status != 'completed':
+        print(f"Transcription failed: {transcript.status}")
         return
 
-    # Cluster speaker embeddings
-    best_n = MIN_SPEAKERS
-    best_score = -1
-    best_labels = []
-
-    for n_clusters in range(MIN_SPEAKERS, min(MAX_SPEAKERS + 1, len(embeddings))):
-        kmeans = KMeans(n_clusters=n_clusters, random_state=0).fit(embeddings)
-        labels = kmeans.labels_
-        if len(set(labels)) == 1:
-            continue
-        score = silhouette_score(embeddings, labels)
-        if score > best_score:
-            best_score = score
-            best_n = n_clusters
-            best_labels = labels
-
-    # Save diarized transcript
+    # --- Diarized transcript output ---
     rows = []
-    for segment, label in zip(valid_segments, best_labels):
-        start = str(timedelta(seconds=int(segment["start"])))
-        end = str(timedelta(seconds=int(segment["end"])))
-        text = segment["text"].strip()
-        speaker = f"Person {label + 1}"
+    utterances = transcript.utterances
+    speaker_times = {}
+    full_timeline = []
+
+    for utterance in utterances:
+        start_sec = utterance.start / 1000
+        end_sec = utterance.end / 1000
+        speaker_id = f"Person {utterance.speaker + 1}"
+        duration = end_sec - start_sec
+
+        # Accumulate speaking time
+        speaker_times[speaker_id] = speaker_times.get(speaker_id, 0) + duration
+
+        # Save timeline for overlap/silence calc
+        full_timeline.append((start_sec, end_sec, speaker_id))
+
+        # Save to transcript
         rows.append({
-            "start_time": start,
-            "end_time": end,
-            "speaker": speaker,
-            "text": text
+            "start_time": str(timedelta(seconds=int(start_sec))),
+            "end_time": str(timedelta(seconds=int(end_sec))),
+            "speaker": speaker_id,
+            "text": utterance.text.strip()
         })
 
     df = pd.DataFrame(rows)
     transcript_file = os.path.join(transcript_output_dir, base_name + "_transcript.csv")
     df.to_csv(transcript_file, index=False)
+
+    # --- Overlap and Silence Analysis ---
+    timeline = sorted(full_timeline, key=lambda x: x[0])
+    current_speakers = []
+    previous_end = 0
+    overlap_time = 0
+    silence_time = 0
+
+    events = []
+    for start, end, speaker in timeline:
+        events.append((start, 'start', speaker))
+        events.append((end, 'end', speaker))
+
+    events.sort()
+    active_speakers = set()
+    last_timestamp = 0
+
+    for timestamp, event_type, speaker in events:
+        if timestamp > last_timestamp:
+            delta = timestamp - last_timestamp
+            if len(active_speakers) == 0:
+                silence_time += delta
+            elif len(active_speakers) > 1:
+                overlap_time += delta
+        if event_type == 'start':
+            active_speakers.add(speaker)
+        else:
+            active_speakers.discard(speaker)
+        last_timestamp = timestamp
+
+    # --- Save summary ---
+    summary_rows = [{"metric": "Total Speaking Time", "value": ""}]
+    for speaker, seconds in speaker_times.items():
+        summary_rows.append({
+            "metric": f"{speaker} speaking time",
+            "value": str(timedelta(seconds=int(seconds)))
+        })
+
+    summary_rows += [
+        {"metric": "Overlapping speech time", "value": str(timedelta(seconds=int(overlap_time)))},
+        {"metric": "Silence (no one speaking)", "value": str(timedelta(seconds=int(silence_time)))}
+    ]
+
+    summary_df = pd.DataFrame(summary_rows)
+    summary_file = os.path.join(transcript_output_dir, base_name + "_summary.csv")
+    summary_df.to_csv(summary_file, index=False)
+
+    # Also print summary
+    print("\n=== SPEAKING TIME SUMMARY ===")
+    for row in summary_rows:
+        print(f"{row['metric']}: {row['value']}")
