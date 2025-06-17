@@ -11,7 +11,7 @@ import tempfile
 
 # --- CONSTANTS ---
 MIN_SPEAKERS = 2
-MAX_SPEAKERS = 6
+MAX_SPEAKERS = 3
 SUPPORTED_AUDIO_EXTENSIONS = {'.amr', '.wma', '.mp3', '.m4a', '.wav'}
 
 # --- Convert any audio to WAV (Mono, 16kHz) ---

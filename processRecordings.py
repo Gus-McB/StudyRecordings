@@ -42,6 +42,6 @@ def process_directory(root_dir, output_dir):
                     print(f"Failed to process {input_path}: {e}")
 
 if __name__ == "__main__":
-    input_dir = r"C:\Users\angus\Desktop\PersonalVSCode\Github\StudyRecordings\Pilot 1"
+    input_dir = r"C:\Users\angus\Desktop\PersonalVSCode\Github\StudyRecordings\Test 1"
     output_dir = r"C:\Users\angus\Desktop\PersonalVSCode\Github\StudyRecordings"
     process_directory(input_dir, output_dir)
