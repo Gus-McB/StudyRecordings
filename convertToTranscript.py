@@ -45,7 +45,7 @@ def transcribe_and_diarize(input_file, wav_output_dir, transcript_output_dir):
     for utterance in utterances:
         start_sec = utterance.start / 1000
         end_sec = utterance.end / 1000
-        speaker_id = f"Person {utterance.speaker + 1}"
+        speaker_id = f"Person {utterance.speaker}"
         duration = end_sec - start_sec
 
         # Accumulate speaking time
