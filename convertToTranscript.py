@@ -4,7 +4,6 @@ from datetime import timedelta
 from resemblyzer import VoiceEncoder, preprocess_wav
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
-import numpy as np
 import whisper
 import ffmpeg
 import tempfile
@@ -72,7 +71,6 @@ def transcribe_and_diarize(input_file, wav_output_dir, transcript_output_dir):
         return
 
     # Cluster speaker embeddings
-    best_n = MIN_SPEAKERS
     best_score = -1
     best_labels = []
 
@@ -84,7 +82,6 @@ def transcribe_and_diarize(input_file, wav_output_dir, transcript_output_dir):
         score = silhouette_score(embeddings, labels)
         if score > best_score:
             best_score = score
-            best_n = n_clusters
             best_labels = labels
 
     # Save diarized transcript
