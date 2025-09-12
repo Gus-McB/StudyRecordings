@@ -4,3 +4,9 @@ scikit-learn
 numpy
 openai-whisper
 ffmpeg
+assemblyai
+matplotlib
+seaborn
+textblob
+nltk
+wordcloud
