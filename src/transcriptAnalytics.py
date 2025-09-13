@@ -664,5 +664,5 @@ if __name__ == "__main__":
     # analyze_multiple_transcripts('path/to/transcript/directory')
     
     print("TranscriptAnalytics module loaded. Use the class to analyse your transcript files.")
-    analyse_multiple_transcripts(r'C:\Users\Angus\OneDrive - University of South Australia\Desktop\Personal Projects\Study 1\Study 1 Transcripts\User 1')
+    analyse_multiple_transcripts('YOUR FILE PATH HERE')
     
