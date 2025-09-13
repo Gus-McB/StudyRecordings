@@ -10,3 +10,4 @@ seaborn
 textblob
 nltk
 wordcloud
+tkinterdnd2
