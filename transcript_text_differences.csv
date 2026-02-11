@@ -1,0 +1,15 @@
+ai_row,ai_start,ai_end,ai_speaker,ai_text,corrected_start,corrected_end,corrected_speaker,corrected_text,speaker_match,text_match,word_differences,match_status
+6,0:00:16,0:00:18,Person 3,"You're lucky, the first one's the high one.",0:00:16,0:00:18,Person 3,"You're lucky, the first one's the hard one.",YES,NO,'high'→'hard',MATCHED
+14,0:00:56,0:00:58,Person 3,Up.,0:00:56,0:00:58,Person 3,Um.,YES,NO,'Up.'→'Um.',MATCHED
+85,0:05:14,0:05:18,Person 3,So move it by the points like that.,0:05:14,0:05:18,Person 3,So I can move it back and forwards like that.,YES,NO,'move'→'I' | 'it'→'can' | 'by'→'move' | 'the'→'it' | 'points'→'back',MATCHED
+89,0:05:32,0:05:42,Person 3,Supervisor's seat is standing up.,0:05:32,0:05:42,Person 3,Supervisor's see who's standing up.,YES,NO,'seat'→'see' | 'is'→'who's',MATCHED
+105,0:06:36,0:06:38,Person 2,Which one?,0:06:36,0:06:38,Person 2,"Which one, show?",YES,NO,"'one?'→'one,' | WordCnt:2→3",MATCHED
+107,0:06:40,0:06:42,Person 2,"No, no, art selecting.",0:06:40,0:06:42,Person 2,"No, no, arch like thing.",YES,NO,'art'→'arch' | 'selecting.'→'like' | WordCnt:4→5,MATCHED
+110,0:06:46,0:06:48,Person 1,"Pink, art selecting.",0:06:46,0:06:48,Person 1,"Pink, arch like thing.",YES,NO,'art'→'arch' | 'selecting.'→'like' | WordCnt:3→4,MATCHED
+135,0:07:50,0:07:52,Person 1,Correct.,0:07:50,0:07:52,Person 1,Correct?,YES,NO,'Correct.'→'Correct?',MATCHED
+168,0:09:18,0:09:20,Person 1,The other way around.,0:09:19,0:09:20,Person 1,Sorry.,YES,NO,'The'→'Sorry.' | WordCnt:4→1,MATCHED
+192,0:10:14,0:10:16,Person 1,"Pink color, single dot, triangle one.",0:10:14,0:10:15,Person 1,Okay.,YES,NO,'Pink'→'Okay.' | WordCnt:6→1,MATCHED
+217,0:11:08,0:11:10,Person 2,There's another one.,0:11:08,0:11:10,Person 2,There's anothers one.,YES,NO,'another'→'anothers',MATCHED
+255,0:12:24,0:12:26,Person 1,Okay.,0:12:24,0:12:26,Person 1,Okay then.,YES,NO,'Okay.'→'Okay' | WordCnt:1→2,MATCHED
+286,0:13:26,0:13:28,Person 2,"Yeah, it's in triangle.",0:13:26,0:13:28,Person 2,"Yeah, it isn't triangle.",YES,NO,'it's'→'it' | 'in'→'isn't',MATCHED
+342,0:16:06,0:16:08,Person 1,Don't change.,0:16:06,0:16:08,Person 1,Can you see this?,YES,NO,'Don't'→'Can' | 'change.'→'you' | WordCnt:2→4,MATCHED

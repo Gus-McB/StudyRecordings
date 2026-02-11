@@ -1,0 +1,113 @@
+ai_row,ai_start,ai_end,ai_speaker,ai_text,corr_start,corr_end,corr_speaker,corr_text,overlap_seconds
+18,0:01:26,0:01:28,Person 3,"Okay, I'm just...",0:01:26,0:01:28,Person 1,"Okay, I'm just...",2
+19,0:01:32,0:01:34,Person 3,"Okay, yeah, I got it.",0:01:32,0:01:34,Person 1,"Okay, yeah, I got it.",2
+20,0:01:34,0:01:36,Person 3,"Yeah, I got it.",0:01:34,0:01:36,Person 1,"Yeah, I got it.",2
+21,0:01:36,0:01:38,Person 3,"Yeah, I got it.",0:01:36,0:01:38,Person 1,"Yeah, I got it.",2
+25,0:02:16,0:02:18,Person 3,"Okay, okay.",0:02:16,0:02:18,Person 1,"Okay, okay.",2
+27,0:02:20,0:02:22,Person 3,"Oh, okay.",0:02:20,0:02:22,Person 1,"Oh, okay.",2
+31,0:02:32,0:02:34,Person 2,"Hi, Shankar.",0:02:32,0:02:34,Person 1,"Hi, Shankar.",2
+32,0:02:34,0:02:36,Person 1,"Hi, I'm good.",0:02:34,0:02:36,Person 2,"Hi, I'm good.",2
+37,0:02:50,0:02:52,Person 1,Slim one.,0:02:50,0:02:52,Person 2,Slim one.,2
+49,0:03:20,0:03:22,Person 3,"Yeah, yeah, like that.",0:03:20,0:03:22,Person 2,"Yeah, yeah, like that.",2
+56,0:03:36,0:03:38,Person 1,"No, the model...",0:03:36,0:03:38,Person 2,"No, the model...",2
+58,0:03:40,0:03:42,Person 3,No?,0:03:40,0:03:42,Person 1,Now?,2
+59,0:03:42,0:03:44,Person 1,Little below.,0:03:42,0:03:44,Person 2,Little below.,2
+60,0:03:44,0:03:46,Person 3,Little.,0:03:44,0:03:46,Person 2,Little.,2
+61,0:03:46,0:03:48,Person 3,No?,0:03:46,0:03:48,Person 1,Now?,2
+62,0:03:48,0:03:50,Person 1,No?,0:03:48,0:03:50,Person 2,Uh huh.,2
+63,0:03:50,0:03:52,Person 3,Okay.,0:03:50,0:03:52,Person 1,Okay.,2
+72,0:04:26,0:04:28,Person 1,"Little below, yeah.",0:04:26,0:04:28,Person 2,"Little below, little below, yeah.",2
+75,0:04:32,0:04:34,Person 3,Okay.,0:04:32,0:04:34,Person 1,Okay.,2
+76,0:04:44,0:04:46,Person 3,I couldn't able to look.,0:04:44,0:04:46,Person 1,I couldn't able to look.,2
+78,0:04:50,0:04:52,Person 3,So I put it slightly.,0:04:50,0:04:52,Person 1,So I put it slightly.,2
+81,0:04:58,0:05:00,Person 3,Okay.,0:04:58,0:05:00,Person 1,Okay.,2
+90,0:05:42,0:05:44,Person 3,Yeah.,0:05:42,0:05:44,Person 2,Yeah.,2
+96,0:06:14,0:06:16,Person 3,Yeah.,0:06:14,0:06:16,Person 2,Yeah.,2
+97,0:06:16,0:06:18,Person 3,Center point?,0:06:16,0:06:18,Person 1,Center point?,2
+99,0:06:20,0:06:22,Person 3,"Okay, I don't know where to start.",0:06:20,0:06:22,Person 1,"Okay, I don't know where to start.",2
+108,0:06:42,0:06:44,Person 1,Four dots.,0:06:42,0:06:44,Person 2,Four dots.,2
+114,0:06:54,0:06:56,Person 1,"Yeah, middle.",0:06:54,0:06:56,Person 2,"Yeah, middle.",2
+118,0:07:04,0:07:06,Person 3,"Yeah, a little more.",0:07:04,0:07:06,Person 2,"Yeah, a little more.",2
+123,0:07:16,0:07:18,Person 1,"Now I can see, yeah.",0:07:16,0:07:18,Person 2,"Now I can see, yeah.",2
+124,0:07:18,0:07:20,Person 2,"Now I'm fine, right?",0:07:18,0:07:20,Person 1,"Now I'm fine, right?",2
+131,0:07:40,0:07:42,Person 3,Here?,0:07:40,0:07:42,Person 1,Here?,2
+141,0:08:04,0:08:06,Person 3,Okay.,0:08:04,0:08:06,Person 1,Okay.,2
+147,0:08:20,0:08:22,Person 1,Yeah.,0:08:19,0:08:21,Person 2,"Yeah, yeah.",1
+151,0:08:30,0:08:32,Person 2,Triangle.,0:08:30,0:08:32,Person 1,Triangle.,2
+157,0:08:46,0:08:48,Person 2,"Okay, this one?",0:08:46,0:08:48,Person 1,"Okay, this one?",2
+159,0:08:50,0:08:52,Person 1,"Yeah, yeah, that one.",0:08:49,0:08:52,Person 2,"Yeah, yeah, that one.",2
+162,0:08:56,0:08:58,Person 2,Okay.,0:08:56,0:08:58,Person 1,Okay.,2
+163,0:08:58,0:09:00,Person 1,This side one and that side other one.,0:08:58,0:09:00,Person 2,This side one and that side other one.,2
+170,0:09:22,0:09:24,Person 3,Like this?,0:09:22,0:09:24,Person 1,Like this?,2
+171,0:09:24,0:09:26,Person 1,Yeah.,0:09:24,0:09:26,Person 2,Yeah.,2
+183,0:09:52,0:09:54,Person 1,Not that one.,0:09:52,0:09:54,Person 2,Not that one.,2
+185,0:09:56,0:09:58,Person 2,"Okay, okay, okay, glass.",0:09:56,0:09:58,Person 1,"Okay, okay, okay, glass.",2
+190,0:10:10,0:10:12,Person 3,Yeah.,0:10:10,0:10:12,Person 2,Yeah.,2
+193,0:10:16,0:10:18,Person 2,"Pink color, single dot, triangle.",0:10:16,0:10:18,Person 1,"Pink color, single dot, triangle.",2
+195,0:10:20,0:10:22,Person 1,"Looks like triangle, yeah.",0:10:20,0:10:22,Person 2,"Looks like triangle, yeah.",2
+198,0:10:26,0:10:28,Person 3,"This one, one, and that one.",0:10:26,0:10:28,Person 1,"This one, one, and that one.",2
+199,0:10:28,0:10:30,Person 1,"No, no, no, no.",0:10:28,0:10:30,Person 2,"No, no, no, no.",2
+201,0:10:32,0:10:34,Person 3,"No, there shouldn't be any gap.",0:10:32,0:10:34,Person 2,"No, there shouldn't be any gap.",2
+202,0:10:34,0:10:36,Person 2,Okay.,0:10:34,0:10:36,Person 1,Okay.,2
+205,0:10:40,0:10:42,Person 3,"It should converge, not like the other way around.",0:10:40,0:10:42,Person 2,"It should converge, not like the other way around.",2
+206,0:10:42,0:10:44,Person 3,Okay.,0:10:42,0:10:44,Person 1,Okay.,2
+207,0:10:48,0:10:50,Person 2,That's it like this?,0:10:48,0:10:50,Person 1,That's it like this?,2
+208,0:10:50,0:10:52,Person 1,Yeah.,0:10:50,0:10:52,Person 2,Yeah.,2
+209,0:10:52,0:10:54,Person 3,Okay.,0:10:52,0:10:54,Person 1,Okay.,2
+210,0:10:54,0:10:56,Person 3,"Now pink color, single block.",0:10:54,0:10:56,Person 2,"Now pink color, single block.",2
+211,0:10:56,0:10:58,Person 3,Okay.,0:10:56,0:10:58,Person 1,Okay.,2
+212,0:10:58,0:11:00,Person 1,"Small one, it's a small one.",0:10:58,0:11:00,Person 2,"Small one, it's a small one.",2
+214,0:11:02,0:11:04,Person 2,Okay.,0:11:02,0:11:04,Person 1,Okay.,2
+216,0:11:06,0:11:08,Person 2,Okay.,0:11:06,0:11:08,Person 1,Okay.,2
+218,0:11:10,0:11:12,Person 1,"That goes on the other one, yeah.",0:11:10,0:11:12,Person 2,"That goes on the other one, yeah.",2
+219,0:11:12,0:11:14,Person 2,Okay.,0:11:12,0:11:14,Person 1,Okay.,2
+223,0:11:20,0:11:22,Person 1,"Yeah, that goes on the center.",0:11:20,0:11:22,Person 2,"Yeah, that goes on the center.",2
+224,0:11:22,0:11:24,Person 1,I'm not able to see the model.,0:11:22,0:11:24,Person 2,I'm not able to see the model.,2
+227,0:11:28,0:11:30,Person 3,"The pink color, it should converge like with the two blocks.",0:11:28,0:11:30,Person 2,"The pink color, it should converge like with the two blocks.",2
+234,0:11:42,0:11:44,Person 3,It should converge.,0:11:42,0:11:44,Person 2,It should converge.,2
+235,0:11:44,0:11:46,Person 1,Not this.,0:11:44,0:11:46,Person 2,Not this.,2
+240,0:11:54,0:11:56,Person 3,To the left.,0:11:54,0:11:56,Person 2,To the left.,2
+241,0:11:56,0:11:58,Person 2,Okay.,0:11:56,0:11:58,Person 1,Okay.,2
+250,0:12:14,0:12:16,Person 2,This?,0:12:14,0:12:16,Person 1,This?,2
+251,0:12:16,0:12:18,Person 3,"No, opposite.",0:12:16,0:12:18,Person 2,"No, opposite.",2
+258,0:12:30,0:12:32,Person 2,Like this?,0:12:30,0:12:32,Person 1,Like this?,2
+259,0:12:32,0:12:34,Person 3,"No, it should have a little bit middle like projection like.",0:12:32,0:12:34,Person 2,"No, it should have a little bit middle like projection like.",2
+260,0:12:34,0:12:36,Person 3,"Yeah, that one.",0:12:34,0:12:36,Person 2,"Yeah, that one.",2
+262,0:12:38,0:12:40,Person 2,So this one comes this side or that side?,0:12:38,0:12:40,Person 1,So this one comes this side or that side?,2
+270,0:12:54,0:12:56,Person 2,Okay.,0:12:54,0:12:55,Person 1,Okay.,1
+272,0:12:58,0:13:00,Person 3,Okay.,0:12:59,0:13:00,Person 1,Okay.,1
+277,0:13:08,0:13:10,Person 2,"Two dark red, triangle.",0:13:08,0:13:10,Person 1,"Two dark red, triangle.",2
+281,0:13:16,0:13:18,Person 1,"Two dark red, triangle.",0:13:16,0:13:17,Person 1 ,Two dark red?,1
+282,0:13:18,0:13:20,Person 2,This one?,0:13:18,0:13:20,Person 1,This one?,2
+287,0:13:28,0:13:30,Person 3,"No, I think it's not.",0:13:28,0:13:30,Person 1,"No, I think it's not.",2
+291,0:13:38,0:13:40,Person 3,Not single dot.,0:13:38,0:13:40,Person 2,Not single dot.,2
+297,0:13:50,0:13:52,Person 3,There will be another one of it.,0:13:50,0:13:52,Person 2,There will be another one of it.,2
+298,0:13:52,0:13:54,Person 2,Okay.,0:13:52,0:13:54,Person 1,Okay.,2
+300,0:13:58,0:14:00,Person 3,Okay.,0:13:58,0:14:00,Person 1,Okay.,2
+308,0:14:14,0:14:16,Person 3,Yeah.,0:14:14,0:14:16,Person 2,Yeah.,2
+309,0:14:18,0:14:20,Person 3,Okay.,0:14:18,0:14:20,Person 1,Okay.,2
+311,0:14:28,0:14:30,Person 2,"Yeah, this one?",0:14:28,0:14:30,Person 1,"Yeah, this one?",2
+312,0:14:30,0:14:32,Person 1,Yeah.,0:14:30,0:14:32,Person 2,Yeah.,2
+320,0:14:52,0:14:54,Person 1,Above the fans.,0:14:52,0:14:54,Person 2,Above the fans.,2
+323,0:14:58,0:15:00,Person 2,Okay.,0:14:58,0:15:00,Person 1,Okay.,2
+327,0:15:08,0:15:10,Person 3,I will try to see.,0:15:09,0:15:11,Person 2,That's the way it looks like a fan.,1
+336,0:15:42,0:15:44,Person 3,Okay.,0:15:42,0:15:44,Person 1,Okay.,2
+337,0:15:52,0:15:54,Person 3,Show me.,0:15:52,0:15:54,Person 2,Show me.,2
+338,0:15:54,0:15:56,Person 1,"No, it's not.",0:15:54,0:15:56,Person 2,"No, it's not.",2
+347,0:16:20,0:16:22,Person 3,The two dots.,0:16:20,0:16:22,Person 2,The two dots.,2
+349,0:16:26,0:16:28,Person 3,Correct.,0:16:26,0:16:28,Person 1,Correct.,2
+351,0:16:40,0:16:42,Person 3,Show me.,0:16:40,0:16:42,Person 2,Show me.,2
+358,0:16:56,0:16:58,Person 3,Yeah.,0:16:56,0:16:58,Person 2,Yeah.,2
+361,0:17:04,0:17:06,Person 3,"Yeah, yeah.",0:17:04,0:17:06,Person 2,"Yeah, yeah.",2
+363,0:17:08,0:17:10,Person 3,Okay.,0:17:08,0:17:10,Person 1,Okay.,2
+365,0:17:24,0:17:26,Person 3,Yeah.,0:17:24,0:17:26,Person 2,Yeah.,2
+367,0:17:28,0:17:30,Person 3,"Yeah, yeah.",0:17:28,0:17:30,Person 2,"Yeah, yeah.",2
+376,0:18:02,0:18:04,Person 1,"Yeah, yeah.",0:18:02,0:18:04,Person 2,"Yeah, yeah.",2
+382,0:18:34,0:18:36,Person 3,Is it?,0:18:34,0:18:36,Person 1,Is it?,2
+383,0:18:36,0:18:38,Person 3,"Yeah, this is it.",0:18:36,0:18:38,Person 2,"Yeah, this is it.",2
+384,0:18:38,0:18:40,Person 3,Okay.,0:18:38,0:18:40,Person 1,Okay.,2
+385,0:18:40,0:18:44,Person 1,"Now keep it in the projection in the red block, right?",0:18:40,0:18:44,Person 2,"Now keep it in the projection in the red block, right?",4
+386,0:18:44,0:18:46,Person 2,Can you see that?,0:18:44,0:18:46,Person 1,Can you see that?,2
+388,0:18:48,0:18:50,Person 3,Yeah.,0:18:48,0:18:50,Person 2,Yeah.,2
+389,0:18:50,0:18:52,Person 3,Let it be there.,0:18:50,0:18:52,Person 2,Let it be there.,2
+392,0:18:56,0:18:58,Person 3,Okay.,0:18:56,0:18:58,Person 1,Okay.,2

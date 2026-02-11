@@ -1,0 +1,2 @@
+ai_row,ai_start,ai_end,ai_speaker,ai_text,corrected_start,corrected_end,corrected_speaker,corrected_text,match_score,speaker_match,text_similarity
+19,0:01:32,0:01:34,Person 3,"Okay, yeah, I got it.",0:19:22,0:19:24,Person 3,"Yes, you got it.",0.703,YES,0.649

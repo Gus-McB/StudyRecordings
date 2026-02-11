@@ -44,6 +44,6 @@ def process_directory(root_dir, output_dir):
                     print(f"Failed to process {input_path}: {e}")
 
 if __name__ == "__main__":
-    input_dir = '../input'
-    output_dir = '../output'
+    input_dir = './input'
+    output_dir = './output'
     process_directory(input_dir, output_dir)

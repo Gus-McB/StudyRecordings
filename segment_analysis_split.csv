@@ -1,0 +1,4 @@
+ai_row,ai_start,ai_end,ai_speaker,ai_text,num_overlaps
+103,0:06:30,0:06:32,Person 3,Okay.,2
+232,0:11:38,0:11:40,Person 3,"Opposite, yeah.",2
+328,0:15:10,0:15:12,Person 1,Okay.,2

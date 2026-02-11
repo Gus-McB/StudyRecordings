@@ -1,0 +1,133 @@
+ai_row,ai_start,ai_end,ai_speaker,ai_text,corrected_start,corrected_end,corrected_speaker,corrected_text,speaker_match,text_match,word_differences,match_status
+18,0:01:26,0:01:28,Person 3,"Okay, I'm just...",,,,,,,,UNMATCHED
+19,0:01:32,0:01:34,Person 3,"Okay, yeah, I got it.",,,,,,,,UNMATCHED
+20,0:01:34,0:01:36,Person 3,"Yeah, I got it.",,,,,,,,UNMATCHED
+21,0:01:36,0:01:38,Person 3,"Yeah, I got it.",,,,,,,,UNMATCHED
+25,0:02:16,0:02:18,Person 3,"Okay, okay.",,,,,,,,UNMATCHED
+27,0:02:20,0:02:22,Person 3,"Oh, okay.",,,,,,,,UNMATCHED
+31,0:02:32,0:02:34,Person 2,"Hi, Shankar.",,,,,,,,UNMATCHED
+32,0:02:34,0:02:36,Person 1,"Hi, I'm good.",,,,,,,,UNMATCHED
+37,0:02:50,0:02:52,Person 1,Slim one.,,,,,,,,UNMATCHED
+49,0:03:20,0:03:22,Person 3,"Yeah, yeah, like that.",,,,,,,,UNMATCHED
+56,0:03:36,0:03:38,Person 1,"No, the model...",,,,,,,,UNMATCHED
+58,0:03:40,0:03:42,Person 3,No?,,,,,,,,UNMATCHED
+59,0:03:42,0:03:44,Person 1,Little below.,,,,,,,,UNMATCHED
+60,0:03:44,0:03:46,Person 3,Little.,,,,,,,,UNMATCHED
+61,0:03:46,0:03:48,Person 3,No?,,,,,,,,UNMATCHED
+62,0:03:48,0:03:50,Person 1,No?,,,,,,,,UNMATCHED
+63,0:03:50,0:03:52,Person 3,Okay.,,,,,,,,UNMATCHED
+72,0:04:26,0:04:28,Person 1,"Little below, yeah.",,,,,,,,UNMATCHED
+75,0:04:32,0:04:34,Person 3,Okay.,,,,,,,,UNMATCHED
+76,0:04:44,0:04:46,Person 3,I couldn't able to look.,,,,,,,,UNMATCHED
+78,0:04:50,0:04:52,Person 3,So I put it slightly.,,,,,,,,UNMATCHED
+81,0:04:58,0:05:00,Person 3,Okay.,,,,,,,,UNMATCHED
+90,0:05:42,0:05:44,Person 3,Yeah.,,,,,,,,UNMATCHED
+96,0:06:14,0:06:16,Person 3,Yeah.,,,,,,,,UNMATCHED
+97,0:06:16,0:06:18,Person 3,Center point?,,,,,,,,UNMATCHED
+99,0:06:20,0:06:22,Person 3,"Okay, I don't know where to start.",,,,,,,,UNMATCHED
+103,0:06:30,0:06:32,Person 3,Okay.,,,,,,,,UNMATCHED
+108,0:06:42,0:06:44,Person 1,Four dots.,,,,,,,,UNMATCHED
+114,0:06:54,0:06:56,Person 1,"Yeah, middle.",,,,,,,,UNMATCHED
+118,0:07:04,0:07:06,Person 3,"Yeah, a little more.",,,,,,,,UNMATCHED
+123,0:07:16,0:07:18,Person 1,"Now I can see, yeah.",,,,,,,,UNMATCHED
+124,0:07:18,0:07:20,Person 2,"Now I'm fine, right?",,,,,,,,UNMATCHED
+131,0:07:40,0:07:42,Person 3,Here?,,,,,,,,UNMATCHED
+134,0:07:48,0:07:50,Person 1,"Yeah, yeah.",,,,,,,,UNMATCHED
+141,0:08:04,0:08:06,Person 3,Okay.,,,,,,,,UNMATCHED
+147,0:08:20,0:08:22,Person 1,Yeah.,,,,,,,,UNMATCHED
+151,0:08:30,0:08:32,Person 2,Triangle.,,,,,,,,UNMATCHED
+157,0:08:46,0:08:48,Person 2,"Okay, this one?",,,,,,,,UNMATCHED
+159,0:08:50,0:08:52,Person 1,"Yeah, yeah, that one.",,,,,,,,UNMATCHED
+162,0:08:56,0:08:58,Person 2,Okay.,,,,,,,,UNMATCHED
+163,0:08:58,0:09:00,Person 1,This side one and that side other one.,,,,,,,,UNMATCHED
+170,0:09:22,0:09:24,Person 3,Like this?,,,,,,,,UNMATCHED
+171,0:09:24,0:09:26,Person 1,Yeah.,,,,,,,,UNMATCHED
+183,0:09:52,0:09:54,Person 1,Not that one.,,,,,,,,UNMATCHED
+185,0:09:56,0:09:58,Person 2,"Okay, okay, okay, glass.",,,,,,,,UNMATCHED
+190,0:10:10,0:10:12,Person 3,Yeah.,,,,,,,,UNMATCHED
+191,0:10:12,0:10:14,Person 3,Okay.,,,,,,,,UNMATCHED
+193,0:10:16,0:10:18,Person 2,"Pink color, single dot, triangle.",,,,,,,,UNMATCHED
+195,0:10:20,0:10:22,Person 1,"Looks like triangle, yeah.",,,,,,,,UNMATCHED
+198,0:10:26,0:10:28,Person 3,"This one, one, and that one.",,,,,,,,UNMATCHED
+199,0:10:28,0:10:30,Person 1,"No, no, no, no.",,,,,,,,UNMATCHED
+201,0:10:32,0:10:34,Person 3,"No, there shouldn't be any gap.",,,,,,,,UNMATCHED
+202,0:10:34,0:10:36,Person 2,Okay.,,,,,,,,UNMATCHED
+205,0:10:40,0:10:42,Person 3,"It should converge, not like the other way around.",,,,,,,,UNMATCHED
+206,0:10:42,0:10:44,Person 3,Okay.,,,,,,,,UNMATCHED
+207,0:10:48,0:10:50,Person 2,That's it like this?,,,,,,,,UNMATCHED
+208,0:10:50,0:10:52,Person 1,Yeah.,,,,,,,,UNMATCHED
+209,0:10:52,0:10:54,Person 3,Okay.,,,,,,,,UNMATCHED
+210,0:10:54,0:10:56,Person 3,"Now pink color, single block.",,,,,,,,UNMATCHED
+211,0:10:56,0:10:58,Person 3,Okay.,,,,,,,,UNMATCHED
+212,0:10:58,0:11:00,Person 1,"Small one, it's a small one.",,,,,,,,UNMATCHED
+214,0:11:02,0:11:04,Person 2,Okay.,,,,,,,,UNMATCHED
+216,0:11:06,0:11:08,Person 2,Okay.,,,,,,,,UNMATCHED
+218,0:11:10,0:11:12,Person 1,"That goes on the other one, yeah.",,,,,,,,UNMATCHED
+219,0:11:12,0:11:14,Person 2,Okay.,,,,,,,,UNMATCHED
+223,0:11:20,0:11:22,Person 1,"Yeah, that goes on the center.",,,,,,,,UNMATCHED
+224,0:11:22,0:11:24,Person 1,I'm not able to see the model.,,,,,,,,UNMATCHED
+227,0:11:28,0:11:30,Person 3,"The pink color, it should converge like with the two blocks.",,,,,,,,UNMATCHED
+232,0:11:38,0:11:40,Person 3,"Opposite, yeah.",,,,,,,,UNMATCHED
+234,0:11:42,0:11:44,Person 3,It should converge.,,,,,,,,UNMATCHED
+235,0:11:44,0:11:46,Person 1,Not this.,,,,,,,,UNMATCHED
+240,0:11:54,0:11:56,Person 3,To the left.,,,,,,,,UNMATCHED
+241,0:11:56,0:11:58,Person 2,Okay.,,,,,,,,UNMATCHED
+250,0:12:14,0:12:16,Person 2,This?,,,,,,,,UNMATCHED
+251,0:12:16,0:12:18,Person 3,"No, opposite.",,,,,,,,UNMATCHED
+258,0:12:30,0:12:32,Person 2,Like this?,,,,,,,,UNMATCHED
+259,0:12:32,0:12:34,Person 3,"No, it should have a little bit middle like projection like.",,,,,,,,UNMATCHED
+260,0:12:34,0:12:36,Person 3,"Yeah, that one.",,,,,,,,UNMATCHED
+262,0:12:38,0:12:40,Person 2,So this one comes this side or that side?,,,,,,,,UNMATCHED
+264,0:12:42,0:12:44,Person 2,Okay.,,,,,,,,UNMATCHED
+265,0:12:44,0:12:46,Person 3,Okay.,,,,,,,,UNMATCHED
+266,0:12:46,0:12:48,Person 1,Okay.,,,,,,,,UNMATCHED
+267,0:12:48,0:12:50,Person 2,Okay.,,,,,,,,UNMATCHED
+268,0:12:50,0:12:52,Person 2,Okay.,,,,,,,,UNMATCHED
+269,0:12:52,0:12:54,Person 2,Okay.,,,,,,,,UNMATCHED
+270,0:12:54,0:12:56,Person 2,Okay.,,,,,,,,UNMATCHED
+271,0:12:56,0:12:58,Person 3,Okay.,,,,,,,,UNMATCHED
+272,0:12:58,0:13:00,Person 3,Okay.,,,,,,,,UNMATCHED
+273,0:13:00,0:13:02,Person 3,Okay.,,,,,,,,UNMATCHED
+277,0:13:08,0:13:10,Person 2,"Two dark red, triangle.",,,,,,,,UNMATCHED
+278,0:13:10,0:13:12,Person 1,"Two dark red, triangle.",,,,,,,,UNMATCHED
+279,0:13:12,0:13:14,Person 1,"Two dark red, triangle.",,,,,,,,UNMATCHED
+280,0:13:14,0:13:16,Person 3,"Two dark red, triangle.",,,,,,,,UNMATCHED
+281,0:13:16,0:13:18,Person 1,"Two dark red, triangle.",,,,,,,,UNMATCHED
+282,0:13:18,0:13:20,Person 2,This one?,,,,,,,,UNMATCHED
+287,0:13:28,0:13:30,Person 3,"No, I think it's not.",,,,,,,,UNMATCHED
+291,0:13:38,0:13:40,Person 3,Not single dot.,,,,,,,,UNMATCHED
+297,0:13:50,0:13:52,Person 3,There will be another one of it.,,,,,,,,UNMATCHED
+298,0:13:52,0:13:54,Person 2,Okay.,,,,,,,,UNMATCHED
+300,0:13:58,0:14:00,Person 3,Okay.,,,,,,,,UNMATCHED
+308,0:14:14,0:14:16,Person 3,Yeah.,,,,,,,,UNMATCHED
+309,0:14:18,0:14:20,Person 3,Okay.,,,,,,,,UNMATCHED
+311,0:14:28,0:14:30,Person 2,"Yeah, this one?",,,,,,,,UNMATCHED
+312,0:14:30,0:14:32,Person 1,Yeah.,,,,,,,,UNMATCHED
+317,0:14:46,0:14:48,Person 3,This one?,,,,,,,,UNMATCHED
+320,0:14:52,0:14:54,Person 1,Above the fans.,,,,,,,,UNMATCHED
+323,0:14:58,0:15:00,Person 2,Okay.,,,,,,,,UNMATCHED
+324,0:15:00,0:15:02,Person 2,That's the way it looks like a fan.,,,,,,,,UNMATCHED
+325,0:15:04,0:15:06,Person 3,Show me.,,,,,,,,UNMATCHED
+326,0:15:06,0:15:08,Person 2,"Yeah, one second.",,,,,,,,UNMATCHED
+327,0:15:08,0:15:10,Person 3,I will try to see.,,,,,,,,UNMATCHED
+328,0:15:10,0:15:12,Person 1,Okay.,,,,,,,,UNMATCHED
+336,0:15:42,0:15:44,Person 3,Okay.,,,,,,,,UNMATCHED
+337,0:15:52,0:15:54,Person 3,Show me.,,,,,,,,UNMATCHED
+338,0:15:54,0:15:56,Person 1,"No, it's not.",,,,,,,,UNMATCHED
+347,0:16:20,0:16:22,Person 3,The two dots.,,,,,,,,UNMATCHED
+349,0:16:26,0:16:28,Person 3,Correct.,,,,,,,,UNMATCHED
+351,0:16:40,0:16:42,Person 3,Show me.,,,,,,,,UNMATCHED
+358,0:16:56,0:16:58,Person 3,Yeah.,,,,,,,,UNMATCHED
+361,0:17:04,0:17:06,Person 3,"Yeah, yeah.",,,,,,,,UNMATCHED
+363,0:17:08,0:17:10,Person 3,Okay.,,,,,,,,UNMATCHED
+365,0:17:24,0:17:26,Person 3,Yeah.,,,,,,,,UNMATCHED
+367,0:17:28,0:17:30,Person 3,"Yeah, yeah.",,,,,,,,UNMATCHED
+376,0:18:02,0:18:04,Person 1,"Yeah, yeah.",,,,,,,,UNMATCHED
+382,0:18:34,0:18:36,Person 3,Is it?,,,,,,,,UNMATCHED
+383,0:18:36,0:18:38,Person 3,"Yeah, this is it.",,,,,,,,UNMATCHED
+384,0:18:38,0:18:40,Person 3,Okay.,,,,,,,,UNMATCHED
+385,0:18:40,0:18:44,Person 1,"Now keep it in the projection in the red block, right?",,,,,,,,UNMATCHED
+386,0:18:44,0:18:46,Person 2,Can you see that?,,,,,,,,UNMATCHED
+388,0:18:48,0:18:50,Person 3,Yeah.,,,,,,,,UNMATCHED
+389,0:18:50,0:18:52,Person 3,Let it be there.,,,,,,,,UNMATCHED
+392,0:18:56,0:18:58,Person 3,Okay.,,,,,,,,UNMATCHED

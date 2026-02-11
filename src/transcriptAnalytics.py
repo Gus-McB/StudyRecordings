@@ -409,10 +409,13 @@ class TranscriptAnalytics:
             interruptions_made = len([i for i in interruptions if i['interrupter'] == speaker])
             interruptions_received = len([i for i in interruptions if i['interrupted'] == speaker])
             
+            # Only add 1 if interruptions_received is 0
+            denominator = interruptions_received if interruptions_received > 0 else 1
+            
             interruption_stats[speaker] = {
                 'interruptions_made': interruptions_made,
                 'interruptions_received': interruptions_received,
-                'interruption_ratio': interruptions_made / (interruptions_received + 1)  # +1 to avoid division by zero
+                'interruption_ratio': interruptions_made / denominator
             }
         
         return {
